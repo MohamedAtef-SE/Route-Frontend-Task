@@ -1,10 +1,10 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom'
 import Layout, { loader as MainLoader } from './Components/Layout'
 import ErrorPage from './Components/ErrorPage'
 import Customer, { loader as customerLoader } from './Components/Customer'
 import Home from './Components/Home'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/', element: <Layout />, errorElement: <ErrorPage />, id: 'home-id', loader: MainLoader, children: [
       { index: true, element: <Home /> },
