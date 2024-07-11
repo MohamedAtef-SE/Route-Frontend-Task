@@ -14,7 +14,7 @@ export default function Layout() {
 
 export async function loader() {
 
-    const response = await fetch('https://mohamedatef-se.github.io/Route-Frontend-Task/database.json');
+    const response = await fetch('https://raw.githubusercontent.com/MohamedAtef-SE/Route-Frontend-Task/master/src/data/database.json');
     if (!response.ok) {
         throw json({ message: "Ops!! Faild to Fetch Customers Or Transactions Data.🤔" }, { status: 500 })
     }
