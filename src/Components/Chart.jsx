@@ -5,7 +5,6 @@ import { PieChart, Pie, Tooltip } from 'recharts';
 export default function Chart({ data }) {
 
     const charts = data.map((tran) => { return { name: tran.date, value: tran.amount } })
-    console.log(charts)
 
     return (
         <PieChart width={400} height={400}>

@@ -7,20 +7,20 @@ export default function MainTable({ customersList, trans }) {
     const [transDetails, setTransDetails] = useState(trans)
 
     function filterByCustomer(customerID) {
-        if (customerID == 'all') {
+        if (customerID === 'all') {
             setTransDetails(trans)
             return;
         }
-        const updatedTrans = trans.filter(tran => tran.customer_id == customerID);
+        const updatedTrans = trans.filter(tran => tran.customer_id === +customerID);
         setTransDetails(updatedTrans)
     }
 
     function filterByAmount(value) {
-        if (value == 'all') {
+        if (value === 'all') {
             setTransDetails(trans)
             return;
         }
-        const updatedTrans = trans.filter(tran => tran.amount == value);
+        const updatedTrans = trans.filter(tran => tran.amount === +value);
         setTransDetails(updatedTrans)
     }
 
@@ -39,7 +39,7 @@ export default function MainTable({ customersList, trans }) {
             <tbody>
                 {transDetails.map(transaction => <TableRow key={transaction.id}
                     transaction={transaction}
-                    customer={customersList.find(customer => +customer.id === +transaction.customer_id)} />)}
+                    customer={customersList.find(customer => customer.id === +transaction.customer_id)} />)}
             </tbody>
         </table>
     </div>

@@ -4,11 +4,10 @@ import classes from './Layout.module.css'
 export default function ErrorPage() {
 
     let title = "Found Error !!";
-    let message = "Maybe you forget to Run Json-Server...😬";
-    let RUN_SERVER = "General Note don't forget to Run-Server: npx json-server data/database.json --port 8000"
+    let message = "Occurred Error Happend...😬";
     const error = useRouteError();
 
-    if (error.status == 500) {
+    if (error.status === 500) {
         message = error.data.message
     }
 
@@ -16,7 +15,5 @@ export default function ErrorPage() {
     return <section className={classes.error_section}>
         <h1>{title}</h1>
         <p>{message}</p>
-        <span className={classes.note}>{RUN_SERVER}</span>
-
     </section>
 }
